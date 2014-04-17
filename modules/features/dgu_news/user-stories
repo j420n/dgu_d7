@@ -9,11 +9,11 @@ As a Site Visitor I want to see a list of the latest news articles in chronologi
 As a Site Visitor I want to browse the latest news stories on the news landing page so that I can choose to read what interests me.
 As a Site Visitor I want to search for news stories so that I can find news about a specific topic.
 As a Site Visitor I want to share news stories on my preferred social network so that I can engage my social network in DGU team happenings.
-
+As a Site Visitor reading a news article I want to see an option to flag a news article if I think it is offensive or incorrect.
 
 As a Registered user I want to easily navigate to the news landing page to browse the latest news articles from the DGU Team.
 As a Registered user browsing the latest news articles I want to be able to bookmark a news article to my profile so that I can read or reference it in the future.
-As a Registered user reading a news article I would like to see an option to flag a news article if I think it is offensive or incorrect.
+
 
 As a News Editor I want to see a list of news articles which I have published in my user profile.
 As a News Editor I want to see a list of news articles which have been flagged as inappropriate or offensive in my user profile.

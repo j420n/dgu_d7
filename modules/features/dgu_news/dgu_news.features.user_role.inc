@@ -16,16 +16,10 @@ function dgu_news_user_default_roles() {
     'weight' => 2,
   );
 
-  // Exported role: news moderator.
-  $roles['news moderator'] = array(
-    'name' => 'news moderator',
-    'weight' => 9,
-  );
-
-  // Exported role: news publisher.
-  $roles['news publisher'] = array(
-    'name' => 'news publisher',
-    'weight' => 10,
+  // Exported role: news editor.
+  $roles['news editor'] = array(
+    'name' => 'news editor',
+    'weight' => 11,
   );
 
   return $roles;

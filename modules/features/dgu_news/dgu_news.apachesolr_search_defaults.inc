@@ -15,9 +15,9 @@ function dgu_news_apachesolr_search_default_searchers() {
   $searcher->api_version = 3;
   $searcher->page_id = 'core_search';
   $searcher->label = 'Core Search';
-  $searcher->description = 'DGU News Article Search';
-  $searcher->search_path = 'search/news';
-  $searcher->page_title = 'Search News';
+  $searcher->description = 'Core Search';
+  $searcher->search_path = 'search/site';
+  $searcher->page_title = 'Site';
   $searcher->env_id = '';
   $searcher->settings = array(
     'apachesolr_search_search_type' => 'custom',

@@ -37,20 +37,12 @@ function dgu_news_views_api($module = NULL, $api = NULL) {
  */
 function dgu_news_node_info() {
   $items = array(
-    'news_article' => array(
-      'name' => t('News Article'),
+    'dgu_news_article' => array(
+      'name' => t('DGU News Article'),
       'base' => 'node_content',
-      'description' => t('A news article content type'),
+      'description' => t('dgu news article'),
       'has_title' => '1',
       'title_label' => t('Headline'),
-      'help' => t('Please do not write anything which could be considered offensive.'),
-    ),
-    'simplenews' => array(
-      'name' => t('Newsletter issue'),
-      'base' => 'node_content',
-      'description' => t('A newsletter issue to be sent to subscribed email addresses.'),
-      'has_title' => '1',
-      'title_label' => t('Title'),
       'help' => '',
     ),
   );

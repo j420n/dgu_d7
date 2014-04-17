@@ -40,6 +40,46 @@ function dgu_news_field_default_field_bases() {
     'type' => 'image',
   );
 
+  // Exported field_base: 'field_news_category'
+  $field_bases['field_news_category'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_news_category',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        1 => 'World',
+        2 => 'UK',
+        3 => 'England',
+        4 => 'N. Ireland',
+        5 => 'Scotland',
+        6 => 'Wales',
+        7 => 'Business',
+        8 => 'Politics',
+        9 => 'Health',
+        10 => 'Education',
+        11 => 'Sci/Environment',
+        12 => 'Technology',
+        13 => 'Entertainment & Arts',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_integer',
+  );
+
   // Exported field_base: 'field_teaser'
   $field_bases['field_teaser'] = array(
     'active' => 1,

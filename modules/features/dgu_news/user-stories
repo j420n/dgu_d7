@@ -1,35 +1,27 @@
 Administrator - Administrate the site feature
-Editor - Create/Publish News articles
+News Editor - Create/Publish News articles
 Registered User
 Site Visitor - View/Search/Share News Articles
 
 
-As a site visitor I want to easily navigate to the news landing page so that I can read the latest happenings of the DGU team.
-As a site visitor I want to see a the latest news stories on the news landing page so that I can choose to read what interests me.
-As a site visitor I want to search for news stories so that I can find news about a specific topic.
-As a site visitor I want to share news stories on my preferred social network so that I can engage my social network in DGU team happenings.
+As a Site Visitor I want to easily navigate to the news landing page so that I can read the latest happenings of the DGU team.
+As a Site Visitor I want to see a list of the latest news articles in chronological order.
+As a Site Visitor I want to browse the latest news stories on the news landing page so that I can choose to read what interests me.
+As a Site Visitor I want to search for news stories so that I can find news about a specific topic.
+As a Site Visitor I want to share news stories on my preferred social network so that I can engage my social network in DGU team happenings.
 
 
-as a site user on the news landing page,
-I would like to see a link to report a news article if I think it is offensive.
-I would like to see an option for me to save a news article link to my profile for future reference.
+As a Registered user I want to easily navigate to the news landing page to browse the latest news articles from the DGU Team.
+As a Registered user browsing the latest news articles I want to be able to bookmark a news article to my profile so that I can read or reference it in the future.
+As a Registered user reading a news article I would like to see an option to flag a news article if I think it is offensive or incorrect.
 
-as a news moderator on the news landing page,
-I would like to see a list of news articles which I need to moderate,
-I would like the ability to moderate more than one news article at a time.
-I would like this same list of articles to appear in my user profile.
-I would tolerate a reminder sent to my email for each news article I need to moderate
-I would be impressed if once per day I received a single email containing multiple news entries I need to moderate.
+As a News Editor I want to see a list of news articles which I have published in my user profile.
+As a News Editor I want to see a list of news articles which have been flagged as inappropriate or offensive in my user profile.
+As a News Editor I want to receive an email if an article I have published has been flagged as inappropriate or offensive.
+As a News Editor I want to be able to see a link or button to publish a new DGU News Article
 
-as a publisher on the news landing page,
-I would like to see a link to publish a new news article.
-I would like this link to be in my profile if I need it.
-I would like to see a list of the News Articles which I have published.
-I would like to see a list of News articles which i have published which have been reported.
-I would like to be able see a link any reported news articles so I can edit it.
-I would like to be able to see the any report details related to the article.
-
-as an administrator on the landing page,
-I would like to be able to create or promote a news publisher or news moderator user easily.
-I would like to be able to publish news articles if want
-I would like to see some statistics
+As an Administrator on the news landing page I would like to see a list of flagged news articles.
+As an Administrator I want to edit a news article which has been flagged.
+As an Administrator I want to easily create or promote a News Editor user.
+As an Administrator I want to have the ability to publish a new News Article.
+As an Administrator I would like to see some statistics.

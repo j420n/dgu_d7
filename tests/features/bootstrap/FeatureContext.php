@@ -1078,7 +1078,7 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
       new Given("I follow \"Moderate\""),
       new Given("I wait until the page loads"),
       new Given("I should see \"Currently there is no published revision of this node.\""),
-      new Given("I should see \"Created by test_user.\""),
+      new Given("I should see \"Created by $author.\""),
       new Given("I should see \"Edited by $author.\""),
       new Given("I should see the link \"$author\" in the \"main_content\" region"),
       new Given("I should not see the link \"test_moderator\" in the \"main_content\" region"),

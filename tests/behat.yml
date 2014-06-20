@@ -41,6 +41,7 @@ default:
         breadcrumb: '#breadcrumb'
         pager: '.pagination'
         node_header: 'header'
+        lexicon_links: '.lexicon-links.alphabet-search'
       selectors:
         message_selector: '.alert'
         error_message_selector: '.alert.alert-error'

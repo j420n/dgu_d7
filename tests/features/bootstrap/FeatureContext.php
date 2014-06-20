@@ -1132,4 +1132,21 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
       throw new Exception('Node region contains "' . $text . '" which doesn\'t match "' . $regex . '"');
     }
   }
+
+  /**
+   * @Then /^I should see the lexicon links$/
+   */
+  public function iShouldSeeTheLexiconLinks() {
+    $lexicon_links = $this->getRegion('lexicon_links');
+    if (empty($lexicon_links)) {
+      throw new PendingException('Lexicon link region not found');
+    }
+    $regex = '((\w*)\Q | \E)';
+    $text = $lexicon_links->getText();
+    preg_match('/' . $regex . '/i', $text, $match);
+
+    if (empty($match)) {
+      throw new Exception('Lexicon links contain "' . $text . '" which doesn\'t match "' . $regex . '"');
+    }
+  }
 }

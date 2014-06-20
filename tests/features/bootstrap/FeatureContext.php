@@ -810,7 +810,7 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
    * @Given /^pager should match "([^"]*)"$/
    */
   public function pagerShouldMatch($regex) {
-    $pager = $this->getSession()->getPage()->find('css', '.pagination');
+    $pager = $this->getRegion('pager');
 
     if (empty($pager)) {
       throw new \Exception('Pager not found.');

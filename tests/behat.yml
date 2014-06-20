@@ -40,6 +40,7 @@ default:
         footer: '#footer'
         breadcrumb: '#breadcrumb'
         pager: '.pagination'
+        node_header: 'header'
       selectors:
         message_selector: '.alert'
         error_message_selector: '.alert.alert-error'

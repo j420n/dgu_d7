@@ -1115,4 +1115,21 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
       new Given("I should see \"View published\""),
     );
   }
+
+  /**
+   * @Given /^Node header should match "([^"]*)"$/
+   */
+  public function NodeHeaderShouldMatch($regex) {
+    $node_region = $this->getRegion('node_header');
+    if (empty($node_region)) {
+      throw new \Exception('Node region not found.');
+    }
+
+    $text = $node_region->getText();
+    preg_match('/' . $regex . '/i', $text, $match);
+
+    if (empty($match)) {
+      throw new Exception('Node region contains "' . $text . '" which doesn\'t match "' . $regex . '"');
+    }
+  }
 }

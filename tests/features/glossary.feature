@@ -5,7 +5,7 @@ As a site user
 I should be able to search the open data glossary and add new content from a glossary landing page
 
 @api
-Scenario: View glossary landing page as an anonymous user and an authenticated user.
+Scenario: View glossary landing page as an anonymous user.
   Given I am on the homepage
   When I click "Interact"
   And I follow "Open data glossary"
@@ -21,20 +21,15 @@ Scenario: View glossary landing page as an anonymous user and an authenticated u
   And I should see "This glossary is intended to be an authoritative explanation of the meaning of technical terms, for all users of data.gov.uk."
   And I should see "AGGREGATED DATA"
   And I should see "VALUE-ADDED INFORMATION"
-  Given that the user "test_user" is not registered
-  When I am logged in as a user "test_user" with the "authenticated user" role
-  And I am on "/glossary"
-  Then I should see the following <breadcrumbs>
-    | Glossary of Public Sector Information and Open Data Terminology |
-  And I should see the link "Suggest a new Term"
-  And I should see the lexicon links
 
 @api
 Scenario: Suggest a new term as an authenticated user and get it moderated
   Given that the user "test_user" is not registered
   When I am logged in as a user "test_user" with the "authenticated user" role
   And I am on "/glossary"
-  Then I should see the link "Suggest a new Term"
+  Then I should see the following <breadcrumbs>
+    | Glossary of Public Sector Information and Open Data Terminology |
+  And I should see the lexicon links
   When I follow "Suggest a new Term"
   Then I should be on "/glossary/suggest_new"
   And I should see "You are creating new content, this may be placed in moderation and may not be immediately visible on the site."

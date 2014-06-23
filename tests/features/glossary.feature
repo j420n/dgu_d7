@@ -51,14 +51,15 @@ Scenario: Suggest a new term as an authenticated user and get it moderated
   And I should see "Your draft Suggested term has been created. You can update it in My Drafts section."
   And I should see "Thank you for your suggestion. We will normally respond to your suggestion within 5 working days"
   And I should see the link "Glossary"
-  When I submit "Suggested term" titled "New suggested term by test_user" for moderation
-  And user with "moderator" role moderates "New suggested term by test_user" authored by "test_user"
+  And I should see the link "My Drafts"
+  And I should be on "/glossary/thanks"
+  When I submit "Suggested term" titled "Name of new term suggestion" for moderation
+  And user with "moderator" role moderates "Name of new term suggestion" authored by "test_user"
   And I follow "View published"
-  Then I should be on "/new-suggested-term-testuser"
-  And I should see node title "New suggested term by test_user"
+  Then I should be on "/name-new-term-suggestion"
+  And I should see node title "Name of new term suggestion"
   And Node header should match "Submitted by \w* on \w*, \d*\/\d*\/\d* - \d*:\d*"
   And Node header should match "Updated on \w*, \d*\/\d*\/\d* - \d*:\d*"
-  And I should see "Name of new term suggestion"
   And I should see "Brief suggested term definition"
   And I should see "A reason for the new suggestion"
 

@@ -60,8 +60,8 @@ Scenario: Suggest a new term as an authenticated user and get it moderated
   And I should see node title "Name of new term suggestion"
   And Node header should match "Submitted by \w* on \w*, \d*\/\d*\/\d* - \d*:\d*"
   And Node header should match "Updated on \w*, \d*\/\d*\/\d* - \d*:\d*"
-  And I should see "Brief suggested term definition"
-  And I should see "A reason for the new suggestion"
+  And Node field "suggested-definition" should match "^suggested definition:  Brief suggested term definition$"
+  And Node field "reason-for-change" should match "^Reason for change:  A reason for the new suggestion$"
 
 @api
 Scenario: Add a term as an administrator and check if it is displayed in the New terms page then add a new commment as an authenticated user.

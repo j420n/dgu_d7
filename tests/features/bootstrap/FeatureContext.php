@@ -1139,7 +1139,7 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
   public function iShouldSeeTheLexiconLinks() {
     $lexicon_links = $this->getRegion('lexicon_links');
     if (empty($lexicon_links)) {
-      throw new PendingException('Lexicon link region not found');
+      throw new \Exception('Lexicon link region not found');
     }
     $regex = '((\w*)\Q | \E)';
     $text = $lexicon_links->getText();
@@ -1147,6 +1147,22 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
 
     if (empty($match)) {
       throw new Exception('Lexicon links contain "' . $text . '" which doesn\'t match "' . $regex . '"');
+    }
+  }
+
+  /**
+   * @Given /^Node field "([^"]*)" should match "([^"]*)"$/
+   */
+  public function iNodeFieldShouldMatch($field, $regex) {
+    $node_field = $this->getSession()->getPage()->find('css', '.field.field-name-field-' . $field);
+    if (empty($node_field)) {
+      throw new \Exception('Node field not found');
+    }
+    $text = $node_field->getText();
+    preg_match('/' . $regex . '/i', $text, $match);
+
+    if (empty($match)) {
+      throw new Exception('Node field contains "' . $text . '" which doesn\'t match "' . $regex . '"');
     }
   }
 }

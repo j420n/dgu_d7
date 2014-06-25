@@ -23,19 +23,23 @@ Scenario: View glossary landing page as an anonymous user.
   And I should see "VALUE-ADDED INFORMATION"
 
 @api
-Scenario: Suggest a new term as an authenticated user and get it moderated
+Scenario: Endorse a term as an authenticated user
   Given that the user "test_user" is not registered
   When I am logged in as a user "test_user" with the "authenticated user" role
   And I am on "/glossary"
-  Then I should see the following <breadcrumbs>
-    | Glossary of Public Sector Information and Open Data Terminology |
-  And I should see the lexicon links
-  And I click "D"
+  Then I should see the lexicon links
+  When I click "D"
   And I follow "Disclosive"
   Then I should see "Data is potentially disclosive"
   When I click "Endorse"
   Then I should see "Your vote has been recorded"
   And I should see "Cancel Endorsement"
+
+@api
+Scenario: Suggest a new term as an authenticated user and get it moderated
+  Given that the user "test_user" is not registered
+  When I am logged in as a user "test_user" with the "authenticated user" role
+  And I am on "/glossary"
   When I follow "Suggest a new Term"
   Then I should be on "/glossary/suggest_new"
   And I should see "You are creating new content, this may be placed in moderation and may not be immediately visible on the site."

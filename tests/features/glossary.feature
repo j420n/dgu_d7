@@ -30,6 +30,12 @@ Scenario: Suggest a new term as an authenticated user and get it moderated
   Then I should see the following <breadcrumbs>
     | Glossary of Public Sector Information and Open Data Terminology |
   And I should see the lexicon links
+  And I click "D"
+  And I follow "Disclosive"
+  Then I should see "Data is potentially disclosive"
+  When I click "Endorse"
+  Then I should see "Your vote has been recorded"
+  And I should see "Cancel Endorsement"
   When I follow "Suggest a new Term"
   Then I should be on "/glossary/suggest_new"
   And I should see "You are creating new content, this may be placed in moderation and may not be immediately visible on the site."

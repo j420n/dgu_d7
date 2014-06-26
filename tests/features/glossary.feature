@@ -108,9 +108,9 @@ Scenario: Add a term as an administrator and check if it is displayed in the New
   And I should see the link "Reply"
   And I should see "Posted by test_commenting_user"
 
-  @api
-  Scenario: Search for a term as an administrator using the lexicon extra link
-    Given that the user "test_admin" is not registered
-    When I am logged in as a user "test_admin" with the "administrator" role
-    And I am on "/glossary"
-    Then Term title "AGGREGATED DATA" should contain "SEARCH FOR TERM" extra link in glossary term
+@api
+Scenario: Search for a term as an administrator using the lexicon extra link
+  Given that the user "test_admin" is not registered
+  When I am logged in as a user "test_admin" with the "administrator" role
+  And I am on "/glossary"
+  Then Term title "AGGREGATED DATA" should contain "SEARCH FOR TERM" extra link in glossary term.

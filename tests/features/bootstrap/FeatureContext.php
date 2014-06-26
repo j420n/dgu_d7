@@ -1165,4 +1165,36 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
       throw new Exception('Node field contains "' . $text . '" which doesn\'t match "' . $regex . '"');
     }
   }
+
+  /**
+   * @Given /^Term title "([^"]*)" should contain "([^"]*)" extra link in glossary term$/
+   */
+  public function termTitleShouldMatchInGlossaryTerm($title,$link) {
+    $term_entries = $this->getSession()->getPage()->findAll('css', '.glossary-term.term-existing');
+    if (empty($term_entries)) {
+      throw new \Exception('No existing glossary terms found.');
+    }
+    //We have an array of glossary terms
+    foreach ($term_entries as $term) {
+      //The term title is the second <a> tag inside the <dt> tag so we find both
+      $term_titles = $term->findAll('css', 'dt a');
+      foreach ($term_titles as $term_title) {
+        if(!empty($match)){
+          return;
+        }
+        $term_title_text = $term_title->getText();
+        if ($term_title_text == $title) {
+          // If we have found the correct term we check the links
+          $term_links = $term->findAll('css', '.lexicon-extralinks a');
+          foreach ($term_links as $term_link) {
+            $link_text = $term_link->getText();
+            preg_match('/' . $link . '/i', $link_text, $match);
+            if (empty($match)) {
+              throw new Exception('Glossary term extra link "' . $link . '" was not found.');
+            }
+          }
+        }
+      }
+    }
+  }
 }

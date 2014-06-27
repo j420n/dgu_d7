@@ -113,4 +113,4 @@ Scenario: Search for a term as an administrator using the lexicon extra link
   Given that the user "test_admin" is not registered
   When I am logged in as a user "test_admin" with the "administrator" role
   And I am on "/glossary"
-  Then Term title "AGGREGATED DATA" should contain "SEARCH FOR TERM" extra link in glossary term.
+  Then Term title "AGGREGATED DATA" should contain "SEARCH FOR TERM" extra link in glossary term

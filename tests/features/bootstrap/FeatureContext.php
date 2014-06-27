@@ -1169,7 +1169,7 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
   /**
    * @Given /^Term title "([^"]*)" should contain "([^"]*)" extra link in glossary term$/
    */
-  public function termTitleShouldMatchInGlossaryTerm($title,$link) {
+  public function termTitleShouldContainExtraLinkInGlossaryTerm($title,$link) {
     $term_entries = $this->getSession()->getPage()->findAll('css', '.glossary-term.term-existing');
     if (empty($term_entries)) {
       throw new \Exception('No existing glossary terms found.');

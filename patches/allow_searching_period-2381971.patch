@@ -1,0 +1,15 @@
+diff --git a/.htaccess b/.htaccess
+index 7ccb6a2..0874e9a 100644
+--- a/.htaccess
++++ b/.htaccess
+@@ -66,6 +66,10 @@ DirectoryIndex index.php index.html index.htm
+   # Make sure Authorization HTTP header is available to PHP
+   # even when running as CGI or FastCGI.
+   RewriteRule ^ - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
++  
++  # Make sure that you can search for a period and not get redirected to a forbidden error page.
++  RewriteCond %{REQUEST_URI} ^/search/.*$
++  RewriteRule ^ index.php [L]
+ 
+   # Block access to "hidden" directories whose names begin with a period. This
+   # includes directories used by version control systems such as Subversion or
